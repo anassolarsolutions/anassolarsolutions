@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Solar Inverters | Anas S&E Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --secondary-blue: #007bff;
+            --dark-blue: #003d82;
+            --accent-yellow: #ffc107;
+            --accent-orange: #ff8c00;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-yellow);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--dark-blue);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-accent {
+            background: var(--accent-yellow);
+            color: var(--dark-gray);
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-orange);
+            color: var(--white);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .logo-text span {
+            color: var(--accent-yellow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        /* Inverters Section */
+        .inverters {
+            background-color: var(--light-gray);
+            padding-top: 120px;
+        }
+
+        .inverter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .inverter-card {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .inverter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .inverter-img {
+            height: 200px;
+            background-color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .inverter-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .inverter-card:hover .inverter-img img {
+            transform: scale(1.05);
+        }
+
+        .inverter-info {
+            padding: 20px;
+        }
+
+        .inverter-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .inverter-info p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .back-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-yellow);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-yellow);
+            color: var(--dark-gray);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .jdr-glow {
+            color: #ff4444;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+            }
+            to {
+                text-shadow: 0 0 15px #ff0000, 0 0 25px #ff0000, 0 0 35px #ff0000;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: var(--transition);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .inverter-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .inverters {
+                padding-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-text">Anas <span>S&E</span></a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#inverters">Inverters</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Inverters Section -->
+    <section class="inverters" id="inverters">
+        <div class="container">
+            <div class="section-title">
+                <h2>All Solar Inverters</h2>
+                <p>Complete range of 50+ premium inverters for every need and budget</p>
+            </div>
+            <div class="inverter-grid">
+                <div class="inverter-card" onclick="redirectToWhatsApp('Inverex Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://zarea.pk/wp-content/uploads/2024/08/inverex-nitrox-12kw-hybrid-solar.webp" alt="Inverex Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Inverex Nitrox</h3>
+                        <p>Reliable hybrid inverter with MPPT technology</p>
+                        <p class="product-price">From Rs. 44,500</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Inverex Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Fronius Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://www.selectronic.com.au/images/FroniusGen24.jpg" alt="Fronius Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Fronius Primo Gen24+</h3>
+                        <p>Austrian quality hybrid inverter with battery ready</p>
+                        <p class="product-price">From Rs. 220,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Fronius Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Tesla Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://p7.hiclipart.com/preview/33/2/359/tesla-powerwall-battery-charger-tesla-motors-solar-power-solar-panels-tesla-thumbnail.jpg" alt="Tesla Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Tesla Solar Inverter</h3>
+                        <p>Integrated solar inverter with Powerwall compatibility</p>
+                        <p class="product-price">From Rs. 300,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Tesla Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Sungrow Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Ietyq1P4kidrmjS4x1dID4k8g9EM8pxj6Q&s" alt="Sungrow Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Sungrow SG Series</h3>
+                        <p>High-efficiency string inverters for residential</p>
+                        <p class="product-price">From Rs. 150,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Sungrow Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Growatt Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://i.ytimg.com/vi/pHzDlEYv1Pk/mqdefault.jpg" alt="Growatt Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Growatt MIN Series</h3>
+                        <p>Hybrid inverters with Wi-Fi monitoring</p>
+                        <p class="product-price">From Rs. 85,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Growatt Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('GoodWe Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://en.goodwe.com/Public/Uploads/uploadfile/images/20230831/DNS-2.png" alt="GoodWe Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>GoodWe DNS Hybrid</h3>
+                        <p>Hybrid inverter with battery backup</p>
+                        <p class="product-price">From Rs. 120,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in GoodWe Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Huawei Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://solar.huawei.com/admin/asset/v1/pro/view/bcf9419a00e44d1ea412454838446a1e.png" alt="Huawei Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Huawei SUN2000</h3>
+                        <p>Smart string inverter with AI optimization</p>
+                        <p class="product-price">From Rs. 185,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Huawei Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Knox Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://kamalsolar.pk/cdn/shop/files/Knox6.2KWIP-21PV6600HybridSolarInverter_1066x.png?v=1753608457" alt="Knox Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Knox Krypton Eco</h3>
+                        <p>6.2kW Hybrid Solar Inverter</p>
+                        <p class="product-price">Rs. 110,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Knox Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Solis Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://cmsdata.solisinverters.com/upload/2025-06-02/1748874350477_7a9278a3-ee32-40be-9ca0-90f780c3d103.png" alt="Solis Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Solis Hybrid 5G</h3>
+                        <p>Dual MPPT Hybrid Inverter</p>
+                        <p class="product-price">From Rs. 105,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Solis Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Homage Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://homage.pk/cdn/shop/files/HAS-3218SCC-_Hybrid_461a9309-0d5d-40d0-99f1-c93e42d2f234.png?v=1760103733" alt="Homage Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Homage Solar</h3>
+                        <p>Reliable hybrid inverter for home use</p>
+                        <p class="product-price">From Rs. 75,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Homage Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+             
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('LuxPower Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://static3.webx.pk/files/77842/Images/a-grade-solar-karachi-29-77842-2423912-120825040251457.webp" alt="LuxPower Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>LuxPower Hybrid</h3>
+                        <p>Advanced hybrid inverters with battery management</p>
+                        <p class="product-price">From Rs. 95,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in LuxPower Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('SMA Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://cdn.sma.de/fileadmin/_processed_/b/5/csm_sunny-tripower-smart-energy_339d5e8c3f.png" alt="SMA Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>SMA Sunny Tripower</h3>
+                        <p>German engineering with 99% efficiency</p>
+                        <p class="product-price">From Rs. 280,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in SMA Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="inverter-card" onclick="redirectToWhatsApp('Victron Inverter')">
+                    <div class="inverter-img">
+                        <img src="https://www.victronenergy.com/_next/image?url=https%3A%2F%2Fwww.victronenergy.com%2Fupload%2Fproducts%2FMultiPlus-II_nw.png&w=3840&q=70" alt="Victron Inverter">
+                    </div>
+                    <div class="inverter-info">
+                        <h3>Victron MultiPlus</h3>
+                        <p>Dutch engineering for off-grid systems</p>
+                        <p class="product-price">From Rs. 250,000</p>
+                        <a href="https://wa.me/923481830504?text=Hi! I'm interested in Victron Inverter" class="btn" target="_blank">Get Quote</a>
+                    </div>
+                </div>
+
+             
+
+            </div>
+
+            <div class="back-btn">
+                <a href="index.html" class="btn btn-accent">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Anas S&E Solutions</h3>
+                    <p>Your trusted partner for premium solar and electrical solutions across Pakistan.</p>
+                    <div class="social-links">
+                        <a href="facebook.com/anassolarsolutions"><i class="fab fa-facebook-f"></i></a>
+                        <a href="x.com/anassolarsolutions"><i class="fab fa-twitter"></i></a>
+                        <a href="instagram.com/anassolarsolutions"><i class="fab fa-instagram"></i></a>
+                        <a href="linkedin.com/anassolarsolutions"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#inverters">Inverters</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 0348-1830504</li>
+                        <li><i class="fas fa-envelope"></i> info@anassolarsolutions.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +92 348 1830504</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mandi Bahauddin, Punjab</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Anas S&E Solutions. All Rights Reserved. | Design & Development by <span class="jdr-glow">JDR-Production</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+
+        // WhatsApp Redirect Function
+        function redirectToWhatsApp(inverter) {
+            const message = `Hi! I'm interested in ${inverter}. Please provide more details and pricing.`;
+            const whatsappUrl = `https://wa.me/923481830504?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
